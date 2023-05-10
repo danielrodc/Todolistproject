@@ -1,26 +1,43 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState } from "react";
 
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
 
+	const [inputValue, setInputValue]=useState("");
+	const [todos, SetTodos]=useState([]);
+
+	return ( 
+
+		<><div className="container">
+			<h1>My To do List</h1>
+			<ul>
+				<li>
+					<input
+						type="text"
+						onChange={(e) => setInputValue(e.target.value)}
+						value={inputValue}
+						onKeyPress={(e) => {
+							if (e.Key === "Enter") {
+								setTodos(todos.concat([inputValue]));
+								setInputValue("");
+							}
+						} }
+						placeholder="Add your task here?">
+					</input>
+				</li>
+				{todos.map((_item, index) => (
+					<li>
+						<i
+							class="fas fa-trash-alt"
+							onClick={() => setTodos(
+								todos.filter(
+									(t, currentIndex) => Index != currentIndex
+								)
+							)} /></i>))}
+			</li>
+			))}
+		</ul><div> {todos.lenght} Tasks </div></>
+		</div>
+
+		
 export default Home;
