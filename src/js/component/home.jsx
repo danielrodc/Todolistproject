@@ -3,12 +3,13 @@ import React, { useState } from "react";
 //create your first component
 const Home = () => {
 
-	const [inputValue, setInputValue]=useState("");
-	const [todos, SetTodos]=useState([]);
+	const [inputValue, setInputValue] = useState("");
+	const [todos, setTodos] = useState([]);
 
-	return ( 
+	
+	return (
 
-		<><div className="container">
+		<div className="container">
 			<h1>My To do List</h1>
 			<ul>
 				<li>
@@ -17,27 +18,28 @@ const Home = () => {
 						onChange={(e) => setInputValue(e.target.value)}
 						value={inputValue}
 						onKeyPress={(e) => {
-							if (e.Key === "Enter") {
+							if (e.key === "Enter") {
 								setTodos(todos.concat([inputValue]));
 								setInputValue("");
 							}
-						} }
+						}}
 						placeholder="Add your task here?">
 					</input>
 				</li>
 				{todos.map((_item, index) => (
-					<li>
+					<li key={index}>
+						<span>{_item}</span>
 						<i
-							class="fas fa-trash-alt"
+							className="fas fa-trash-alt"
 							onClick={() => setTodos(
 								todos.filter(
-									(t, currentIndex) => Index != currentIndex
+									(t, currentIndex) => index != currentIndex
 								)
-							)} /></i>))}
-			</li>
-			))}
-		</ul><div> {todos.lenght} Tasks </div></>
+							)} ></i>
+					</li>))}
+			</ul>
+			<div>  Tasks {todos.length}</div>
 		</div>
-
-		
-export default Home;
+	)
+								}
+	export default Home;
