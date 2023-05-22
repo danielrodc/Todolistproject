@@ -9,8 +9,9 @@ const Home = () => {
 	
 	return (
 
-		<div className="container">
+		<div className="container-flex">
 			<h1>My To do List</h1>
+			<div className="container">
 			<ul>
 				<li>
 					<input
@@ -23,7 +24,7 @@ const Home = () => {
 								setInputValue("");
 							}
 						}}
-						placeholder="Add your task here?">
+						placeholder="Add your task here">
 					</input>
 				</li>
 				{todos.map((_item, index) => (
@@ -38,7 +39,8 @@ const Home = () => {
 							)} ></i>
 					</li>))}
 			</ul>
-			<div>  Tasks {todos.length}</div>
+			<div>  Tasks: {todos.length}</div>
+			</div>
 		</div>
 	)
 								}

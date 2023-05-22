@@ -11,20 +11,41 @@
 
 */
 
-body{ margin-top: 100px;
+body{ 
+    margin-top: 100px;
+    background-color: whitesmoke;
 }
-ul{ padding: 0;
-    margin-botton:5px;
+ul{ 
+    padding: 0;
+    margin-bottom:5px;
 }
 ul-li{
-    boder:1px solid grey;
-    lists-style:none
     padding: 5px;
 }
 h1{
     text-align:center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: x-large;
 }
 input{
     border:none;
-    width:100px;
+    width:200px;
+    
 }
+.container{
+    background-color: white;
+    font-family: "Lucida Console", "Courier New", monospace;
+    padding: 25px;
+    width: 500px;
+    border-radius: 20px;
+}
+i{
+    font-size: xx-small;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+li{
+    margin-bottom:10px;
+    list-style-type: "🐱";
+}
+
